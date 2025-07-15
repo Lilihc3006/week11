@@ -7,12 +7,11 @@ name: tfsec
 
 on:
   push:
-    branches: [ "prod" ]
+    branches: [ "prod", "staging", "dev" ]
   pull_request:
     branches: [ "prod" ]
   schedule:
     - cron: '33 11 * * 5'
-
 jobs:
   tfsec:
     name: Run tfsec sarif report
