@@ -16,13 +16,12 @@ jobs:
       actions: read
       contents: read
       security-events: write
-
     steps:
       - name: Clone repo
         uses: actions/checkout@v4
 
       - name: Run tfsec
-        uses: aquasecurity/tfsec-sarif-action@21ded20e8ca120c9d9d36ab04e7f46477542a608
+        uses: aquasecurity/tfsec-sarif-action@21ded20
         with:
           sarif_file: tfsec.sarif
 
