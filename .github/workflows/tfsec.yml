@@ -10,8 +10,13 @@ on:
     branches: [ "prod", "staging", "dev" ]
   pull_request:
     branches: [ "prod" ]
+
+    schedule:
+      - cron: '33 11 * * 5'
+
   schedule:
     - cron: '33 11 * * 5'
+
 jobs:
   tfsec:
     name: Run tfsec sarif report
@@ -26,12 +31,18 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run tfsec
+
+        uses: aquasecurity/tfsec-sarif-action@21ded20
+
         uses: aquasecurity/tfsec-sarif-action@21ded20e8ca120cd9d3d6ab04ef746477542a608
+
         with:
           sarif_file: tfsec.sarif
 
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
         with:
+
           # Path to SARIF file relative to the root of the repository
+          
           sarif_file: tfsec.sarif
