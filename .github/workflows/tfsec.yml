@@ -3,6 +3,7 @@ name: tfsec
 on:
   push:
     branches:
+      - main
       - prod
       - dev
       - staging
