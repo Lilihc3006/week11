@@ -2,6 +2,8 @@ provider "aws" {
   region = "us-east-1"
 }
 
+# Dummy change to trigger tfsec
+
 resource "aws_security_group" "secure_example" {
   name        = "allow_internal_http"
   description = "Security group for internal HTTP access"
@@ -15,10 +17,10 @@ resource "aws_security_group" "secure_example" {
   }
 
   egress {
-  from_port   = 0
-  to_port     = 0
-  protocol    = "-1"
-  description = "Allow egress only to internal network"
-  cidr_blocks = ["10.0.0.0/16"] 
-}
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    description = "Allow egress only to internal network"
+    cidr_blocks = ["10.0.0.0/16"]
   }
+}
