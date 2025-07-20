@@ -15,10 +15,12 @@ resource "aws_security_group" "secure_example" {
   }
 
   egress {
-    description = "Allow all outbound traffic"
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["10.0.0.0/16"]
+  from_port   = 0
+  to_port     = 0
+  protocol    = "-1"
+  cidr_blocks = ["10.0.0.0/16"]
+  description = "Allow egress only to internal network"
+}
+
   }
 }
