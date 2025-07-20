@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "aws_security_group" "bad_example" {
   name        = "allow_all"
-  description = "Allow all inbound traffic"
+  description = "Test inbound traffic - tfsec validation"
   ingress {
     from_port   = 0
     to_port     = 0
