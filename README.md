@@ -1,4 +1,9 @@
 # week11
 CloudAutomation
-# tfsec activado en staging
-Última validación de tfsec: OK
+
+# tfsec activated in staging  
+Last tfsec validation: OK  
+# tfsec execution test in dev  
+# Second tfsec test in dev  
+# tfsec running successfully in dev
+
