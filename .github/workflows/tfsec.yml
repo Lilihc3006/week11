@@ -7,6 +7,11 @@ on:
       - dev
       - staging
 
+permissions:
+  security-events: write  # Necesario para subir reportes sarif
+  actions: read
+  contents: read
+
 jobs:
   tfsec:
     name: Run tfsec sarif report
@@ -25,6 +30,7 @@ jobs:
           tfsec . --format sarif --out tfsec.sarif || true
 
       - name: Upload tfsec sarif report
-        uses: github/codeql-action/upload-sarif@v2
+        uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: tfsec.sarif
+
