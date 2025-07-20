@@ -18,9 +18,8 @@ resource "aws_security_group" "secure_example" {
   from_port   = 0
   to_port     = 0
   protocol    = "-1"
-  cidr_blocks = ["10.0.0.0/16"]
   description = "Allow egress only to internal network"
+  cidr_blocks = ["10.0.0.0/16"] 
 }
-
   }
 }
